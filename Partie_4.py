@@ -73,10 +73,10 @@ class CompteController:
         self.compte = CompteBancaire()
 
     def depot(self, montant):
-        self.compte.depot(montant)
+        if montant > 0: self.compte.depot(montant)
 
     def retrait(self, montant):
-        self.compte.retrait(montant)
+        if montant > 0: self.compte.retrait(montant)
 
 
 if __name__ == "__main__":
@@ -105,4 +105,5 @@ if __name__ == "__main__":
     controller.retrait(400)
 
     print("\n=== Retrait de 500 ===")
+
     controller.retrait(500)
